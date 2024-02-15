@@ -25,6 +25,8 @@ import {NgIf} from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { EmployComponent } from './employ/employ.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 ///////////////////////////////////////////////////////////////////////////////
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { EmployComponent } from './employ/employ.component';
     ListUserComponent,
     SidebarComponent,
     AddUserComponent,
-    EmployComponent
+    EmployComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
