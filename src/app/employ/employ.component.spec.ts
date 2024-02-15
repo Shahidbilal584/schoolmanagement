@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { EmployComponent } from './employ.component';
+
+describe('EmployComponent', () => {
+  let component: EmployComponent;
+  let fixture: ComponentFixture<EmployComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [EmployComponent]
+    });
+    fixture = TestBed.createComponent(EmployComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

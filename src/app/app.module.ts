@@ -24,6 +24,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import {NgIf} from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { EmployComponent } from './employ/employ.component';
 ///////////////////////////////////////////////////////////////////////////////
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
     HeaderComponent,
     ListUserComponent,
     SidebarComponent,
-    AddUserComponent
+    AddUserComponent,
+    EmployComponent
   ],
   imports: [
     BrowserModule,
