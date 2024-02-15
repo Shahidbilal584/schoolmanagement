@@ -1,0 +1,53 @@
+<mat-dialog-content class="dialog" id="setwrapperTop">
+    <div class="create">
+      <div class="create-text">Create</div>
+      <div class="close-icon">
+        <img mat-dialog-close src="/assets/close.svg" alt="" (click)="canceldialog()"/>
+      </div>
+    </div>
+  
+    <div class="dialog-cont">
+  
+        <div id="Dform">
+            <mat-form-field id="input-t">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput [formControl]="usernameFormControl" placeholder="" [(ngModel)]="application.name" />
+            </mat-form-field>
+        </div>
+        <div id="Dform">
+          <mat-form-field id="input-t">
+            <mat-label>Password</mat-label>
+            <input matInput [(ngModel)]="application.password" placeholder=""/>
+          </mat-form-field>
+        </div>
+        <!-- <div id="Dform">
+          <mat-form-field id="input-text">
+            <mat-label>Application Type</mat-label>
+            <mat-select class="option" [(ngModel)]="application.ApplicationType" disableRipple>
+              <mat-option value="Native">Native</mat-option>
+              <mat-option value="Single Page Web Applications">Single Page Web Applications</mat-option>
+              <mat-option value="Regular Web applications">Regular Web applications</mat-option>
+              <mat-option value="Machine To Machine Applications">Machine To Machine Applications</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div id="Dform">
+          <mat-form-field id="input-text">
+            <mat-label>Select Protocol</mat-label>
+            <mat-select class="option"  [(ngModel)]="application.Protocol" disableRipple>
+              <mat-option value="OAuth">OAuth</mat-option>
+              <mat-option value="Open ID connect">Open ID connect</mat-option>
+              <mat-option value="SAML">SAML</mat-option>
+              <mat-option value="">None</mat-option>
+  
+            </mat-select>
+          </mat-form-field>
+        </div> -->
+       
+      <mat-dialog-actions class="action" align="end">
+        <button mat-button (click)="canceldialog()">CANCEL</button>
+        <button mat-button (click)="addApplication()" cdkFocusInitial>CREATE</button>
+      </mat-dialog-actions>
+  
+    </div>
+  </mat-dialog-content>

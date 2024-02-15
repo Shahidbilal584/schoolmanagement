@@ -1,0 +1,205 @@
+
+.mat-elevation-z8{
+
+    box-shadow: none;
+  }
+  .application-nav{
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    position: relative;
+    align-items: center;
+    background-color: transparent;
+    
+  }
+  .application-text{
+    color: #f7941d;
+    font-family:' Poppins', sans-serif;
+    letter-spacing: 0.1px;
+    font-size: 20px;
+    margin-left: 13px;
+    width: 109px;
+    
+  }
+  ::ng-deep #application-form{
+  width: 138px !important;
+  margin-right: 20px;
+  height: 40px;
+  
+  position: relative;
+  }
+  
+  
+  
+  #input{
+  
+  height: 20px;
+  font-size: 10px;
+  color: rgb(80, 78, 78);
+  
+  }
+  ::ng-deep #application-table-filter .mdc-text-field--filled .mdc-line-ripple::before {
+  border-bottom:1px solid rgb(227, 224, 224) !important;
+  }
+  ::ng-deep #application-table-filter .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
+  padding-top: 12px;
+  padding-bottom: 8px;
+  height: 31px;
+  }
+  ::ng-deep #application-table-filter .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  
+  height: 39px;
+  padding: 3px;
+  background-color: white;
+  }
+  mat-label{
+  color: #f7941d;
+  transform-origin: left top;
+  font-size: 15px;
+  
+  }
+  ::ng-deep #application-table-filter .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
+  border-bottom:1px solid rgb(39, 38, 38);
+  }
+  ::ng-deep #application-table-filter.mat-mdc-form-field .mat-mdc-floating-label.mdc-floating-label {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: normal;
+  pointer-events: all;
+  top: 23px;
+  }
+  #application-table-filter{
+  width: 138px !important;
+  
+  
+  }
+  ::ng-deep.application-right-bar{
+    margin-right: 24px;
+  
+    width: 257px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  
+  .search-icon{
+    margin-left: 13px;
+    
+    width: 40px;
+    height: 40px;
+    font-weight: 600;
+    font-size: 21px;
+    border-radius: 100%;
+    
+  }
+  .search-side{
+    margin-top: 8px;
+    margin-left: 8px;
+    
+    width: 24px;
+    height: 24px;
+  }
+  .book-mark{
+    width: 40px;
+    height: 40px;
+    margin-left: 18px;
+    border-radius: 100%;
+  }
+  .book-icon{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+    margin-top: 8px;
+  }
+  .setting-icon{
+    padding-left: 12px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  ::ng-deep.app-id{
+    
+    padding-left: 0 !important;
+    
+    font-size: 13px;
+  }
+  .head-id{
+    padding-left: 0 !important;
+    
+  }
+  .name-id{
+    
+    padding-left: 43px;
+    font-size: 13px;
+  }
+  
+  
+  
+  
+  
+  .tool-bar{
+  align-items: center !important;
+  position: absolute;
+  background-color: #e3f2fd;
+  z-index: 2;
+  width:1043px;
+  display: none;
+  
+  
+  }
+  .tool-bar-block{
+  
+  display: flex;
+  justify-content: space-between;
+  
+  }
+  .tool-bar-options{
+  display:flex ;
+  
+  margin-top: 15px;
+  margin-right: 6px;
+  }
+  #tool-bar-edit{
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  margin-right: 35px;
+  display: block;
+  }
+  .tool-bar-delete{
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  }
+  .tool-bar-num{
+  color: #f7941d;
+  
+  margin-left: 11px;
+  width: 30px;
+  padding-top: 15px;
+  }
+  .name-head{
+    letter-spacing: 0px;
+    padding-left: 43px;
+  
+  }
+  
+  .name-cont{
+    
+    padding-left: 43px;
+    font-weight: 400;
+    letter-spacing: 0px;
+  }
+  
+  
+  
+  ::ng-deep.white-background {
+  background-color: white !important; /* Set the background color to white */
+  /* Add any other styles you want for the white background */
+  }
+  

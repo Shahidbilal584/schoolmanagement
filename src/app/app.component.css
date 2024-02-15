@@ -1,0 +1,17 @@
+.HeaderSet{
+    height: 64px;
+    display: block;
+}
+.SideNav{
+    display: block;
+    float: left;
+    height: calc(100% - 64px);
+    width: 307px;
+}
+.child{
+    display: block;
+    float: right;
+    width: calc(100% - 317px);
+    margin:5px ;
+    
+}

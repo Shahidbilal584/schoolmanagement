@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-between;
+  
+    height: 64px;
+    background-color: rgb(83, 83, 230);
+    color: aliceblue;
+    padding-left: 15px;
+  }

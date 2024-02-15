@@ -1,0 +1,85 @@
+.head-nav{
+    padding: 0;
+    
+  }
+  .side-bar{
+     
+    float: left;
+    max-width: 307px;
+    min-width: 150px;
+    overflow: hidden;
+    z-index: 10;
+    height: 95vh;
+  }
+  
+  .side-panels{
+      
+    height:90vh;
+    background-color: #ffffff;
+    box-shadow: none;
+  }
+  .panel,.panel-1,.panel-2,.panel-3{
+    border-right: none;
+    /* width: 307px; */
+    border-radius: 0px;
+    border-bottom: 0.5px solid rgb(226, 223, 223);
+    border-radius: 0;   
+  }
+  /* Responsive adjustments */
+  .bar{
+      
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  ::ng-deep.title{
+    display: flex;
+    height: 40px !important;
+    
+  }
+  ::ng-deep.application:hover{
+      
+      
+    background-color: #f2f2f2 ;
+    
+  }
+  .text{
+      
+    margin-left: 12px;
+    font-size: 14px;
+    min-width: 202px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: black;
+    
+  }
+  .application{
+    display: flex;
+    margin-left: 13px;
+    height: 40px;
+    cursor: pointer;
+    align-items: center;
+    margin-left: 0;
+    width: 300px;
+  }
+  .application-text{
+      
+    margin-left: 19px;
+    font-size: 14px;
+    min-width: 197px;
+    font-family: 'popins',sans-serif;
+    font-weight: 400;
+    color: black;
+    
+  }
+  
+  ::ng-deep.mat-expansion-indicator::after {
+    margin-right: 20px;
+  }
+  ::ng-deep.mat-expansion-indicator::after { 
+    margin-left: 20px;
+  }
+  .mat-expansion-panel-header:not([aria-disabled=true]) {
+    height: 40px;
+  }
