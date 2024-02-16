@@ -13,8 +13,8 @@
     
   }
   .application-text{
-    color: #f7941d;
-    font-family:' Poppins', sans-serif;
+    color: black;
+    font-family:' Montserrat', sans-serif;
     letter-spacing: 0.1px;
     font-size: 20px;
     margin-left: 13px;
@@ -53,7 +53,7 @@
   background-color: white;
   }
   mat-label{
-  color: #f7941d;
+  color: black;
   transform-origin: left top;
   font-size: 15px;
   

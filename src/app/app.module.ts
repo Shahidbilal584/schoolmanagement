@@ -27,6 +27,7 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { EmployComponent } from './employ/employ.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import {MatIconModule} from '@angular/material/icon';
 ///////////////////////////////////////////////////////////////////////////////
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { SignupComponent } from './signup/signup.component';
     NgIf,
     ReactiveFormsModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatIconModule
  
     
   ],

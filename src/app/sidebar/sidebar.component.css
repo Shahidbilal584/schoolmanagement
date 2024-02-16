@@ -15,7 +15,7 @@
   .side-panels{
       
     height:90vh;
-    background-color: #ffffff;
+    background-color: rgb(83, 83, 230);
     box-shadow: none;
   }
   .panel,.panel-1,.panel-2,.panel-3{
