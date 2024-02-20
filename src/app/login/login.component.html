@@ -1,1 +1,81 @@
-<p>login works!</p>
+<!-- <div class="main">
+<div class="loginitems">
+    <div class="logintag">
+        <h1>
+            Login
+        </h1>
+    </div>
+
+    <div class="email">
+        <mat-form-field style="width: 100% !important;">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com"  required >
+            <mat-error ></mat-error>
+        </mat-form-field>
+    </div>
+    <div class="password">
+        <mat-form-field style="background-color: transparent !important;">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'"  style="background-color: transparent !important" >
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        
+    </div>
+    <div>
+        <p>Don't Have an Account: Signup</p>
+    </div>
+</div>
+</div> -->
+
+  
+  <body>
+    <div id="loginForm">
+      <form>
+        <h2>Login</h2>
+
+        <input type="text" id="loginUsername" required placeholder="Email" />
+
+        <input
+          type="password"
+          id="loginPassword"
+          required
+          placeholder="Password"
+        />
+
+        <button type="button" onclick="login()">Login</button>
+        <p>
+          Don't have an account? <a href="#" routerLink="/employ">Sign up</a>
+        </p>
+      </form>
+    </div>
+
+    
+
+    <!-- <script>
+      function showSignup() {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("signupForm").style.display = "block";
+      }
+
+      function showLogin() {
+        document.getElementById("signupForm").style.display = "none";
+        document.getElementById("loginForm").style.display = "block";
+      }
+
+      function login() {
+        var username = document.getElementById("loginUsername").value;
+        var password = document.getElementById("loginPassword").value;
+
+        alert("Login:\nUsername: " + username + "\nPassword: " + password);
+      }
+
+      function signup() {
+        var username = document.getElementById("signupUsername").value;
+        var password = document.getElementById("signupPassword").value;
+
+        alert("Sign Up:\nUsername: " + username + "\nPassword: " + password);
+      }
+    </script> -->
+  </body>
