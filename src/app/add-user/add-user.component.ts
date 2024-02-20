@@ -18,6 +18,7 @@ export class AddUserComponent {
     public dialogRef: MatDialogRef<AddUserComponent>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any[],private _snackBar: MatSnackBar, private users: ProjectApiService) {
   }
+  
 
   // constructor(private _fb:FormBuilder,
   //   private _empService:EmployeeService,

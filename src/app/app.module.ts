@@ -6,6 +6,8 @@ import { ListUserComponent } from './list-user/list-user.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+
 ////////////////////////////////////////////////////////////////////////////////
 // angular material add
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -60,7 +62,8 @@ import {MatIconModule} from '@angular/material/icon';
     ReactiveFormsModule,
     MatButtonModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule
  
     
   ],

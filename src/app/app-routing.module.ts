@@ -14,7 +14,7 @@ const routes: Routes = [
     component:EmployComponent
   },
   {
-    path: 'login',
+    path: '',
     component:LoginComponent
   },
   {
