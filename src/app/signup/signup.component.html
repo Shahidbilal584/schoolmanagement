@@ -2,17 +2,18 @@
 <body>
     
     <div id="signupForm" >
-        <form>
+        <form [formGroup]="user" (ngSubmit)="signup()">
             <h2>Sign Up</h2>
-            <input type="text" id="signupUsername" required placeholder="Name" />
-            <input type="text" id="signupEmail" required placeholder="Email" />
-            <input type="number" id="signupPhoneNumber" required placeholder="Phone Number" />
-      <input type="password" id="signupPassword" required placeholder="Password"/>
+            <input type="text" formControlName = "name" id="signupUsername" required placeholder="Name" />
+            <input type="text" formControlName = "email" id="signupEmail" required placeholder="Email" />
+            <input type="number" formControlName = "phone" id="signupPhoneNumber" required placeholder="Phone Number" />
+            <input type="password" formControlName = "password" id="signupPassword" required placeholder="Password"/>
         
-        <button type="button" onclick="signup()">Sign Up</button>
+            <button type="submit" >Sign Up</button>
         <p>
             Already have an account? <a href="#" routerLink="/">Login</a>
         </p>
     </form>
 </div>
+
 </body>
