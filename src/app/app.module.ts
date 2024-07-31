@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 
 ////////////////////////////////////////////////////////////////////////////////
 // angular material add
+
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTableModule} from '@angular/material/table';
@@ -26,10 +27,14 @@ import { AddUserComponent } from './add-user/add-user.component';
 import {NgIf} from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
-import { EmployComponent } from './employ/employ.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {MatIconModule} from '@angular/material/icon';
+import { AddClassComponent } from './add-class/add-class.component';
+import { ListClassComponent } from './list-class/list-class.component';
+import { AddFeeComponent } from './add-fee/add-fee.component';
+import { ListFeeComponent } from './list-fee/list-fee.component';
+import { SectionComponent } from './section/section.component';
 ///////////////////////////////////////////////////////////////////////////////
 @NgModule({
   declarations: [
@@ -38,9 +43,14 @@ import {MatIconModule} from '@angular/material/icon';
     ListUserComponent,
     SidebarComponent,
     AddUserComponent,
-    EmployComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AddClassComponent,
+    ListClassComponent,
+    AddFeeComponent,
+    ListFeeComponent,
+    SectionComponent
+
   ],
   imports: [
     BrowserModule,

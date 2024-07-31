@@ -14,14 +14,13 @@ export class SignupComponent {
   user = new FormGroup({
     name: new FormControl(''),
     email: new FormControl(''),
-    password: new FormControl(''),
-    phone: new FormControl('')
+    phone: new FormControl(''),
+    password: new FormControl('')
+    
 
   })
   
   signup(){
-    // console.log(this.user.value);
-    debugger
     this.userapi.addUser(this.user.value).subscribe((result)=>{
       console.log(result)
     })

@@ -1,42 +1,29 @@
-import { SelectionModel } from '@angular/cdk/collections';
-import { Component, ViewChild} from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { AddClassComponent } from '../add-class/add-class.component';
 import { MatTableDataSource } from '@angular/material/table';
-import { ProjectApiService } from '../project-api.service';
+import { SelectionModel } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
+import { ProjectApiService } from '../project-api.service';
+import { MatDialog } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
-import { MatDialog, MatDialogConfig  } from '@angular/material/dialog';
-import { AddUserComponent } from '../add-user/add-user.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
-
 
 @Component({
-  selector: 'app-list-user',
-  templateUrl: './list-user.component.html',
-  styleUrls: ['./list-user.component.css']
+  selector: 'app-list-class',
+  templateUrl: './list-class.component.html',
+  styleUrls: ['./list-class.component.css']
 })
-export class ListUserComponent {
+export class ListClassComponent {
   ELEMENT_DATA: any[] = [];
   selectedRow: any;
-  adduser: any = {};
- displayedColumns: string[] = ['select', 'id', 'name', 'email', 'phone', 'password'];
+  //adduser: any = {};
+ displayedColumns: string[] = ['select', 'id', 'className', 'createdBy'];
  dataSource  = new MatTableDataSource<any>(this.ELEMENT_DATA);
- userArray :any =[];
+//  userArray :any =[];
  selection = new SelectionModel<PeriodicElement>(true, []);
  selections = new SelectionModel<PeriodicElement>(true, []);
  @ViewChild(MatPaginator) paginator!: MatPaginator;
- constructor(private users :ProjectApiService ,private http: HttpClient, public dialog: MatDialog,  private snackBar: MatSnackBar){};
+ constructor(private classApi :ProjectApiService ,private http: HttpClient, public dialog: MatDialog){};
  
-
- openSnackBar(message: string,  isSuccess: boolean) {
-  const panelClass = isSuccess ? ['success-snackbar'] : ['error-snackbar'];
-  this.snackBar.open(message,'' ,{
-    horizontalPosition:'end',
-    verticalPosition:'bottom',
-     panelClass: panelClass
-
-  });
-}
-
 
  ngAfterViewInit() {
    this.dataSource.paginator = this.paginator;
@@ -68,12 +55,12 @@ export class ListUserComponent {
 
  ngOnInit() {
    // Call the getUsers function when the component is initialized
-   this.getUsers();
+   this.getClass();
  }
 
-getUsers() {
- this.users.getUsers().subscribe((response:any) => {
-   //console.log(response);
+getClass() {
+ this.classApi.getClasses().subscribe((response:any) => {
+   console.log(response);
    this.ELEMENT_DATA = response
    this.dataSource  = new MatTableDataSource<any>(this.ELEMENT_DATA);
    this.dataSource.paginator = this.paginator;  
@@ -85,9 +72,10 @@ applyFilter(event: Event) {
  this.dataSource.filter = filterValue.trim().toLowerCase();
 }
 openDialog() {
-  const dialogRef= this.dialog.open(AddUserComponent);
-  dialogRef.afterClosed().subscribe(()=>{
-   this.getUsers();
+  const dialogRef= this.dialog.open(AddClassComponent);
+  dialogRef.afterClosed().subscribe((result)=>{
+   this.ELEMENT_DATA.push(result);
+   this.dataSource.data=this.ELEMENT_DATA;
   })
 }
 openEdit() {
@@ -121,53 +109,52 @@ handleCheckboxChange(row: PeriodicElement): void {
   this.selectedRow=this.selections.selected.length > 0 ? this.selections.selected :undefined;
 }
  
-   editUser(){
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.data = this.selectedRow[0];
-    this.selectedRow.isEdit = true;
-    const dialogRef =this.dialog.open(AddUserComponent, dialogConfig);
+  //  editUser(){
+  //   const dialogConfig = new MatDialogConfig();
+  //   dialogConfig.data = this.selectedRow[0];
+  //   this.selectedRow.isEdit = true;
+  //   const dialogRef =this.dialog.open(AddUserComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe((res) => {
-     if(res){
-      const index =this.dataSource.data.findIndex(e => e.id === res.id)
-      if(index != -1){
-        this.selection.clear();
-        this.selections.clear(); 
-        this.openToolbar();
-      }
+  //   dialogRef.afterClosed().subscribe((res) => {
+  //    if(res && res.emp){
+  //     const index =this.dataSource.data.findIndex(e => e.id === res.emp.id)
+  //     if(index !== -1){
+        
+  //       this.selection.clear();
+  //       this.selections.clear(); 
+  //       this.openToolbar();
+  //     }
       
-     }
-    //  this.selection.clear();
-    //  this.openToolbar();
-    });
-  }
+  //    }
+  //   //  this.selection.clear();
+  //   //  this.openToolbar();
+  //   });
+  // }
 
-  deleteUser(): void {
-    this.selections.selected.forEach(selectedUser => {
-      this.users.deleteUser(selectedUser.id).subscribe(
-        (res) => {
-          console.log(`User with ID ${selectedUser.id} deleted successfully:`, res);
-          this.openSnackBar( 'deletedSuccessfully',true);
-
-          // If you want to remove the deleted user from the selections
-          const index = this.selections.selected.indexOf(selectedUser);
-          if (index > -1) {
-            this.selections.selected.splice(index, 1);
-          }
+  // deleteUser(): void {
+  //   this.selections.selected.forEach(selectedUser => {
+  //     this.users.deleteUser(selectedUser.id).subscribe(
+  //       (res) => {
+  //         console.log(`User with ID ${selectedUser.id} deleted successfully:`, res);
           
-          // Clear selections after successful deletion
-          this.selection.clear();
-          this.selections.clear();
-          this.openToolbar();
-          this.getUsers();
-        },
-        (error:any) => {
-          console.error(`Error deleting user with ID ${selectedUser.id}:`, error);
-          this.openSnackBar('deletedSuccessfully',true);
-        }
-      );
-    });
-  }
+  //         // If you want to remove the deleted user from the selections
+  //         const index = this.selections.selected.indexOf(selectedUser);
+  //         if (index > -1) {
+  //           this.selections.selected.splice(index, 1);
+  //         }
+          
+  //         // Clear selections after successful deletion
+  //         this.selection.clear();
+  //         this.selections.clear();
+  //         this.openToolbar();
+  //         this.getUsers();
+  //       },
+  //       (error:any) => {
+  //         console.error(`Error deleting user with ID ${selectedUser.id}:`, error);
+  //       }
+  //     );
+  //   });
+  // }
 
 }
 export interface PeriodicElement {
@@ -177,3 +164,4 @@ export interface PeriodicElement {
   phone: string;
   password: string;
 }
+

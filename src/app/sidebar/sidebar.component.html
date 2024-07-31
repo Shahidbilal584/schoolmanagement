@@ -1,39 +1,57 @@
 <div class="side-panels">
-    <mat-expansion-panel
-      class="panel"
-      
-      [expanded]="step === 0"
-      (opened)="setStep(0)"
-      hideToggle
-    >
-      <mat-expansion-panel-header class="head-nav">
-        <mat-panel-title class="title">
-          <div class="home-1">
-           <img src="/assets/home.svg" alt="">
-          </div>
-          <div class="text">SETUP</div>
-          <div class="arrow">
-           
-          </div>
-        </mat-panel-title>
-        
-      </mat-expansion-panel-header>
-      <div class="bar">
-        <div class="application" routerLink="/userlist">
-          <div class="application-icon">
-            <img src="/assets/menu.svg" alt="" />
-          </div>
-          <div class="application-text">User</div>
+  <mat-expansion-panel class="panel" [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header class="head-nav">
+      <mat-panel-title class="title">
+        <div class="home-1">
+          <img src="/assets/home.svg" alt="">
         </div>
-      </div>
-      <div class="bar">
-        <div class="application" routerLink="/employ">
-          <div class="application-icon">
-            <img src="/assets/menu.svg" alt="" />
-          </div>
-          <div class="application-text">Employ</div>
+        <div class="text">SETUP</div>
+        <div class="arrow">
+
         </div>
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+    <div class="bar">
+      <div class="application" routerLink="/userlist">
+        <div class="application-icon">
+          <img src="/assets/menu.svg" alt="" />
+        </div>
+        <div class="application-text">User</div>
       </div>
-    </mat-expansion-panel>
-    
     </div>
+    <div class="bar">
+      <div class="application" routerLink="/classlist">
+        <div class="application-icon">
+          <img src="/assets/menu.svg" alt="" />
+        </div>
+        <div class="application-text">Class</div>
+      </div>
+    </div>
+    <div class="bar">
+      <div class="application" routerLink="/feelist">
+        <div class="application-icon">
+          <img src="/assets/menu.svg" alt="" />
+        </div>
+        <div class="application-text">Fee</div>
+      </div>
+    </div>
+    <div class="bar">
+      <div class="application" routerLink="/section">
+        <div class="application-icon">
+          <img src="/assets/menu.svg" alt="" />
+        </div>
+        <div class="application-text">Section</div>
+      </div>
+    </div>
+    <div class="bar">
+      <div class="application" routerLink="/ff">
+        <div class="application-icon">
+          <img src="/assets/menu.svg" alt="" />
+        </div>
+        <div class="application-text">Login</div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+
+</div>

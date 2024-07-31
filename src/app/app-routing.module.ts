@@ -1,25 +1,31 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListUserComponent } from './list-user/list-user.component';
-import { EmployComponent } from './employ/employ.component';
 import { LoginComponent } from './login/login.component'; 
 import { SignupComponent } from './signup/signup.component';
+import { ListFeeComponent } from './list-fee/list-fee.component';
+import { ListClassComponent } from './list-class/list-class.component';
+import { SectionComponent } from './section/section.component';
 const routes: Routes = [
   {
     path: 'userlist',
     component:ListUserComponent
   },
   {
-    path: 'employ',
-    component:EmployComponent
+    path: 'classlist',
+    component:ListClassComponent
   },
   {
-    path: '',
+    path: 'feelist',
+    component:ListFeeComponent
+  },
+  {
+    path: 'section',
+    component:SectionComponent
+  },
+  {
+    path: 'ff',
     component:LoginComponent
-  },
-  {
-    path:'signup',
-    component:SignupComponent
   }
 
 ];

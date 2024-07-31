@@ -3,74 +3,76 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { ProjectApiService } from '../project-api.service';
+import { catchError, throwError } from 'rxjs';
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent {
-  application: any = {};
-  applications: any = [];
-  
-  empForm!: FormGroup;
+  user: any = {};
+  users: any = [];
 
-  constructor(
-    public dialogRef: MatDialogRef<AddUserComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: any[],private _snackBar: MatSnackBar, private users: ProjectApiService) {
+  constructor(private dialogRef: MatDialogRef<AddUserComponent>, private userApi: ProjectApiService
+    , @Inject(MAT_DIALOG_DATA) public data: any, private snackBar: MatSnackBar) {
+    console.log(this.user)
   }
-  
 
-  // constructor(private _fb:FormBuilder,
-  //   private _empService:EmployeeService,
-  //   private _dialogRef:MatDialogRef<EmpAddEditComponent>,
-  //   @Inject(MAT_DIALOG_DATA) public data:any
-  //   ){
+  ngOnInit() {
+    if (this.data) {
+      this.user = this.data;
+      console.log(this.user);
+    }
 
-  // this.empForm=this._fb.group({
-  //   StudentName:'',
-  //   FatherName:'',
-  //   DateOfBirth:'',
-  //   PreviousInstitue:'',
-  //   ClassId:'2',
-  //   SectionId:'2',
+  }
 
-  //   ClassName:'',
-  //   SectionName:'',
+  openSnackBar(message: string, isSuccess: boolean) {
+    const panelClass = isSuccess ? ['success-snackbar'] : ['error-snackbar'];
+    this.snackBar.open(message, '', {
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom',
+      panelClass: panelClass
 
-  // });
-
-  // }
-
-
-  //  empForm:FormGroup;
-
-  usernameFormControl = new FormControl('', [
-    Validators.required,
-    Validators.minLength(5),
-    Validators.maxLength(15),
-  ]);
-
-
-  addApplication() {
-    this.users.addUser(this.application).subscribe((response) => {
-      console.log(response);
-      this.dialogRef.close({ emp: response });
     });
-
   }
-  openSnackBar() {
-    const config = {
-      horizontalPosition: 'right' as MatSnackBarHorizontalPosition,
-      verticalPosition: 'right' as MatSnackBarVerticalPosition,
-      duration: 4000, // Adjust the duration as needed
-    };
-    this._snackBar.open('The Data Added Successfully', '', config);
-    console.log("the snackbar")
 
+  UpdateUser() {
+    this.userApi.updateUsers(this.data.id, this.user).subscribe((res) => {
+      console.log(res)
+      this.dialogRef.close(res);
+      
+      this.openSnackBar('updatedSuccessfuly', true);
+    })
   }
-  canceldialog() {
-    this.application = {}
+
+  usersAdd() {
+    this.userApi.addUser(this.user).pipe(
+      catchError(error => {
+        if (error.status >= 400 && error.status < 500) {
+          this.openSnackBar('Client error occurred:  ', false);
+          // this.loading=false;
+        } else if (error.status >= 500) {
+          this.openSnackBar('Server error occurred: ', false);
+          // this.loading=false;
+        } else {
+          this.openSnackBar('An error occurred: ', false);
+          //this.loading=false;
+
+        }
+        return throwError(error);
+      })
+    )
+      .subscribe((res: any) => {
+        console.log(res);
+        this.dialogRef.close(true);
+        this.openSnackBar('addedSuccessfuly', true);
+      })
+  }
+
+  cancelDialog() {
+    this.user = {};
     this.dialogRef.close();
 
   }
+
 }

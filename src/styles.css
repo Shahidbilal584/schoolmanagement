@@ -20,4 +20,7 @@ body { margin: 0; font-family: "Montserrat", sans-serif; overflow-y: hidden; }
     overflow: auto;
     overflow-x: auto;
   
-      }
+}
+ ::ng-deep.success-snackbar.mat-mdc-snack-bar-container{
+    width: 12px !important;
+}

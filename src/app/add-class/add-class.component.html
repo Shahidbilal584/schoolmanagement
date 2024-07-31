@@ -1,0 +1,29 @@
+<div mat-dialog-title class="main">
+    <div class="close-icon">
+        <mat-icon (click)="cancelDialog()">
+            close
+        </mat-icon>
+    </div>
+</div>
+
+
+<div mat-dialog-content class="content">
+    <form [formGroup]="classData">
+
+        <div class="row">
+            
+            <mat-form-field appearance="outline">
+                <mat-label>ClassName</mat-label>
+                <input type="text" matInput formControlName="ClassName">
+            </mat-form-field>
+            
+        </div>
+        
+        <div mat-dialog-actions class="actions" align="end">
+            
+            <button mat-raised-button color="warn" mat-dialog-close>CANCEL</button>
+            <button mat-raised-button color="primary" (click)="classAdd()">CREATE</button>
+            
+        </div>
+    </form>
+</div>
